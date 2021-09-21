@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_food/pages/home/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -127,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
         dot = 0;
         return _showMaterialDialog('ERROR', 'Invalid PIN. Please try again.');
       }else if(input.length == 6 && input == pass){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => homePage()));
+        Navigator.pushReplacement(context, PageTransition(type: PageTransitionType.fade, child: homePage()));
       }
     });
   }
