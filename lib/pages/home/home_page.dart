@@ -18,7 +18,7 @@ class homePage extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                'THIS IA A HOME PAGE',
+                'THIS IS A HOME PAGE',
                 style: GoogleFonts.righteous(fontSize: 33,color: Colors.white),
               ),
             ),
