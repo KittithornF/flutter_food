@@ -54,7 +54,7 @@ class _homePageState extends State<homePage> {
                               child: Container(
                                 width: 80.0,
                                 height: 80.0,
-                                child: Image.asset('/images/cat.jpg',fit: BoxFit.cover,),
+                                child: Image.asset('assets/images/cat.jpg',fit: BoxFit.cover,),
                               )
                           ),
 
@@ -145,7 +145,7 @@ class profile_page extends StatelessWidget {
                   child: Container(
                     width: 160.0,
                     height: 160.0,
-                    child: Image.asset('/images/cat.jpg',fit: BoxFit.cover,),
+                    child: Image.asset('assets/images/cat.jpg',fit: BoxFit.cover,),
 
                   )
               ),
