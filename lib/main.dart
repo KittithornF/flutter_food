@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food/pages/food/food_detail.dart';
+import 'package:flutter_food/pages/home/home_page.dart';
 import 'package:flutter_food/pages/login/login_page.dart';
 
 void main() {
@@ -23,7 +25,13 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(fontSize: 14.0,color: Colors.white),
         ),
       ),
-      home: LoginPage(),
+      //home: LoginPage(),
+      routes: {
+        LoginPage.routeName: (context) => const LoginPage(),
+        homePage.routeName: (context) => const homePage(),
+        FoodDetail.routeName: (context) => const FoodDetail(),
+      },
+      initialRoute: '/login',
     );
   }
 }

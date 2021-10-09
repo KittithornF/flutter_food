@@ -1,8 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_food/pages/food/food_list_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class homePage extends StatefulWidget {
+  static const routeName = '/home';
   const homePage({Key? key}) : super(key: key);
 
   @override
@@ -79,12 +81,15 @@ class _homePageState extends State<homePage> {
             ListTile(
               title: _buildDrawerItem(Icon(Icons.fastfood), 'Food'),
               onTap: () => _showSubPage(0),
+              selected: _subPageIndex==0,
             ),
             ListTile(
               title: _buildDrawerItem(Icon(Icons.person), 'Profile'),
               onTap: () {
                 _showSubPage(1);
               },
+              selected: _subPageIndex==1,
+
             ),
           ],
         ),
@@ -209,14 +214,7 @@ class _food_menuState extends State<food_menu> {
         ),
         child: Center(
           child: _selectedBottomNavIndex == 0
-              ? Text(
-                  'FOOD MENU',
-                  style: GoogleFonts.righteous(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                )
+              ? FoodListPage()
               : Text("Your Order",
                   style: GoogleFonts.righteous(
                     fontSize: 40,
@@ -239,7 +237,8 @@ class _food_menuState extends State<food_menu> {
         currentIndex: _selectedBottomNavIndex,
         selectedItemColor: Colors.white,
         backgroundColor: Color(0x44aaaaff),
-        elevation: 0,
+        elevation: 3,
+        unselectedItemColor: Colors.black12,
         onTap: (index) {
           setState(() {
             _selectedBottomNavIndex = index;
